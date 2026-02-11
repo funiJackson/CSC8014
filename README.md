@@ -6,7 +6,6 @@ The **Vehicle Hire Management System** is a comprehensive Java application desig
 
 This project was built to demonstrate proficiency in **Object-Oriented Programming (OOP)**, **Design Patterns**, and **Defensive Programming** principles. It features a custom-built unit testing framework to ensure system reliability without reliance on external libraries.
 
----
 
 ## ✨ Key Features
 
@@ -27,7 +26,6 @@ This project was built to demonstrate proficiency in **Object-Oriented Programmi
 * **Immutable Records**: Customer data is designed using immutable patterns to prevent accidental state mutation.
 * **Duplicate Prevention**: Logic ensures unique customer registration based on personal details.
 
----
 
 ## 🛠 Architecture & Technical Highlights：
 
@@ -43,7 +41,6 @@ This project was built to demonstrate proficiency in **Object-Oriented Programmi
 * Instead of using JUnit, a lightweight **Assertion Framework** (`Assertions.java`) was architected from scratch.
 * This demonstrates a deep understanding of how testing libraries work under the hood, including exception assertions (`assertExpectedThrowable`) and boundary testing.
 
----
 
 ## 📂 Project Structure
 
