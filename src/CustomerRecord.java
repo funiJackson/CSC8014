@@ -27,7 +27,7 @@ public class CustomerRecord {
      */
     public CustomerRecord(Name name, Date birthDate, boolean haveC_licence) {
         this.name = name;
-        this.birthDate = birthDate;
+        this.birthDate = new Date(birthDate.getTime());//Immutable defense.
         this.haveC_licence = haveC_licence;
         this.customerID = nextID++;
     }
@@ -38,7 +38,7 @@ public class CustomerRecord {
      * @return the Date of birth.
      */
     public Date getBirthDate() {
-        return birthDate;
+        return new Date(birthDate.getTime());//Set Immutability so client side can not change it.
     }
 
     /**

@@ -139,7 +139,7 @@ public class VehicleManager {
 
         for (Vehicle v_ : allVehicles) {
             // We need a vehicle that matches the type AND is not currently hired.
-            if (v_.getVehicleType().equals(vehicleType)&& !v_.isHired()) {
+            if (v_.getVehicleType().equals(vehicleType)&& !v_.isHired() && v_.getCurrentMileage() < v_.getDistanceRequirement()) {
                     if(v_ instanceof Van){
                         Van van =  (Van)v_;//casting v_ into Van obj so it can use its set method.
                         if(van.requiresInspection()){ continue;}//If the van is flagged for inspection, it cannot be hired. Skip it.
