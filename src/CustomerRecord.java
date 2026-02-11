@@ -77,7 +77,7 @@ public class CustomerRecord {
         if (this == obj){return true;}// If both references point to the same object in memory hence they are equal.
         if (obj == null){return false;}//If the other object is null, they cannot be equal.
 
-        if (getClass() != obj.getClass()){return false;}//Check if they belong to same class.
+        if (!(obj instanceof CustomerRecord)) {return false;}//Check if they belong to same class.
         CustomerRecord that = (CustomerRecord) obj;//Downcasting obj to CustomerRecord so it can compare later.
 
         return Objects.equals(name, that.name) && Objects.equals(birthDate, that.birthDate);// Compare the name and birthDate fields see if it is matched.

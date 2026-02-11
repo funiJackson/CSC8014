@@ -28,7 +28,7 @@ public final class Name {
     public boolean equals(Object obj) {
         if (this == obj){return true;}//Check if there are same object.
         if (obj == null){return false;}//Check if the param we pass is null.
-        if (getClass() != obj.getClass()){return false;}//Check if they belong to same class.
+        if (!(obj instanceof Name)){return false;}//Check if they belong to same class.
          Name name = (Name) obj;//Downcasting obj to name so it can compare.
 
         //Check if the first and last name are match.
