@@ -25,13 +25,12 @@ public class Test {
         tHireVanNoLicense();
         tHireLimit();
         tReturnVehicle();
-        System.out.println("VehicleManagerTest: All tests passed.");
+        System.out.println("VehicleManagerTest: All tests passed!");
     }
 
     /**
      * Helper method to create a Date object from specific year, month, and day values.
      */
-
     private static Date createDate(int year, int month, int day) {
         Calendar cal = Calendar.getInstance();
         cal.set(year, month, day);
