@@ -6,8 +6,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * A test class for the model.CustomerRecord class.
- * This class utilizes the test.Assertions framework to verify the functionality of the CustomerRecord class.
+ * A test class for the CustomerRecord class.
+ * This class utilizes the Assertions framework to verify the functionality of the CustomerRecord class.
  * Test:
  * Behavior of CustomerRecord objects: immutability, ID generation, equality logic, and correct data retrieval.
  * @author Fandi Zhou

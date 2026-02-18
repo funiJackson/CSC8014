@@ -234,7 +234,7 @@ public class TestVehicleManager {
         // Return vehicle with 100 mileage
         m.returnVehicle(v.getVehicleID(), c, 100);
 
-        // model.Vehicle should be available again
+        // Vehicle should be available again
         Assertions.assertEquals(1, m.noOfAvailableVehicles("Car"));
         Assertions.assertFalse(v.isHired());
         Assertions.assertEquals(100, v.getCurrentMileage());

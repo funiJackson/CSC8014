@@ -54,7 +54,7 @@ public class Van extends AbstractVehicle {
     }
 
     /**
-     * Sets method og the inspection requirement status for the van.
+     * Sets method of the inspection requirement status for the van.
      * @param needInspection true to flag the van for inspection and vice versa.
      */
     public void setNeedInspection(boolean needInspection) {
