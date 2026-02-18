@@ -12,7 +12,7 @@ public final class Name {
     private final String firstName, lastName;
 
     /**
-     * Constructs a new model.Name object.
+     * Constructs a new Name object.
      * @param firstName the person's first name.
      * @param lastName  the person's last name.
      */
@@ -38,7 +38,7 @@ public final class Name {
     }
 
     /**
-     * This method is essential for using model.Name objects in has-based collections
+     * This method is essential for using Name objects in has-based collections
      * It ensures that equal objects (same first/last name) produce the same hash code.
      * @return a hash code value for this object.
      */

@@ -7,7 +7,7 @@ import java.time.ZoneId;
 import java.util.*;
 
 /**
- * The manager.VehicleManager class acts as the main class for managing the business.
+ * The VehicleManager class acts as the main class for managing the business.
  * It maintains records of all vehicles, registered customers, and currently hired vehicles.
  * This class provides functionality to:
  * 1.Add new vehicles.
@@ -35,8 +35,8 @@ public class VehicleManager {
     /**
      * This method adds a new vehicle of the specified type vehicleType to the system and
      * allocates it a vehicle ID.
-     * @param vehicleType the type of vehicle to create (e.g., "model.Car", "model.Van").
-     * @return the newly created model.Vehicle object.
+     * @param vehicleType the type of vehicle to create (e.g., "Car", "Van").
+     * @return the newly created Vehicle object.
      */
     public Vehicle addVehicle(String vehicleType){
 
@@ -49,7 +49,7 @@ public class VehicleManager {
 
     /**
      *This method returns the number of vehicles of the specified type (a car or a van) that are Not hired.
-     * @param vehicleType the type of vehicle to count (e.g., "model.Car", "model.Van").
+     * @param vehicleType the type of vehicle to count (e.g., "Car", "Van").
      * @return the number of vehicles available for hire.
      */
     public int noOfAvailableVehicles(String vehicleType) {
@@ -59,7 +59,7 @@ public class VehicleManager {
         for (Vehicle v : allVehicles) {
             if (v.getVehicleType().equals(vehicleType) && !v.isHired()) {
                 // Check two conditions:
-                // 1. The vehicle type matches what we are looking for (model.Car or model.Van).
+                // 1. The vehicle type matches what we are looking for (Car or Van).
                 // 2. The vehicle is NOT currently hired (!v.isHired()).
                 count++;
             }
@@ -74,7 +74,7 @@ public class VehicleManager {
      * @param lastName (the customer's last name).
      * @param dob (the customer's date of birth).
      * @param hasCommercialLicense (true if the customer holds a commercial driver's license (needed for Vans)).
-     * @return the newly created model.CustomerRecord Object.
+     * @return the newly created CustomerRecord Object.
      * @throws IllegalArgumentException if a record for this customer already exists.
      */
 
@@ -102,8 +102,8 @@ public class VehicleManager {
      *        5. the van must not currently require an inspection.
 
      * @param customerRecord the customer attempting to hire the vehicle.
-     * @param vehicleType    the type of vehicle requested ("model.Car" or "model.Van").
-     * @param duration       the duration of the hire in days (used to determine model.Van inspection requirements).
+     * @param vehicleType    the type of vehicle requested ("Car" or "Van").
+     * @param duration       the duration of the hire in days (used to determine Van inspection requirements).
      * @return {@code true} if the vehicle was successfully hired; false if no vehicle is available or the hire limit is reached.
      * @throws IllegalArgumentException if the customer does not meet the age or license requirements.
      */
@@ -117,13 +117,13 @@ public class VehicleManager {
         int age = Period.between(birth, now).getYears();
 
 
-        // Driver must be at least 18 to rent a model.Car.
-        if (vehicleType.equals("model.Car") && age <18){ throw new IllegalArgumentException("Age must above 18 to rent a model.Car!");}
+        // Driver must be at least 18 to rent a Car.
+        if (vehicleType.equals("Car") && age <18){ throw new IllegalArgumentException("Age must above 18 to rent a Car!");}
 
         //Specific requirements for Vans.
-        //Driver must be at least 23 and have Commercial licence to rent a model.Van.
-        if (vehicleType.equals("model.Van")){
-            if(age < 23){throw new IllegalArgumentException("Age must above 23 to rent a model.Van!");}
+        //Driver must be at least 23 and have Commercial licence to rent a Van.
+        if (vehicleType.equals("Van")){
+            if(age < 23){throw new IllegalArgumentException("Age must above 23 to rent a Van!");}
             if(!customerRecord.isHaveC_licence()){ throw new IllegalArgumentException("Commercial Licence Not Found!");}
         }
 
@@ -134,7 +134,7 @@ public class VehicleManager {
 
        // A customer can only hire a maximum of 3 vehicles at once.
         if (hired_V != null && hired_V.size() >= 3) {
-            System.out.println("model.Vehicle already hired at maximum number");
+            System.out.println("Vehicle already hired at maximum number");
             return  false;
         }
 
@@ -144,7 +144,7 @@ public class VehicleManager {
             // We need a vehicle that matches the type AND is not currently hired.
             if (v_.getVehicleType().equals(vehicleType)&& !v_.isHired() && v_.getCurrentMileage() < v_.getDistanceRequirement()) {
                     if(v_ instanceof Van){
-                        Van van =  (Van)v_;//casting v_ into model.Van obj so it can use its set method.
+                        Van van =  (Van)v_;//casting v_ into Van obj so it can use its set method.
                         if(van.requiresInspection()){ continue;}//If the van is flagged for inspection, it cannot be hired. Skip it.
                         if(duration >= 10){van.setNeedInspection(true);}// Set the inspection status if the duration is above 10.
                     }
@@ -165,7 +165,7 @@ public class VehicleManager {
         }
         hired_V.add(v);
 
-        v.setHired(true);//Update the status to the hired model.Vehicle.
+        v.setHired(true);//Update the status to the hired Vehicle.
 
         return true;
 
@@ -177,7 +177,7 @@ public class VehicleManager {
      * Method of the return of a hired vehicle, Updates the vehicle's mileage and status.
      * Also performs maintenance checks:
      * 1. If the vehicle requires a standard service based on total mileage.
-     * 2. If the vehicle is a model.Van, checks if it requires a post-hire inspection.
+     * 2. If the vehicle is a Van, checks if it requires a post-hire inspection.
      * 3. Removes the vehicle from the customer's list of hired vehicles.
 
      * @param vehicleID      the unique ID of the vehicle being returned.
@@ -244,7 +244,7 @@ public class VehicleManager {
      * Retrieves an unmodifiable collection of vehicles currently hired by a specific customer.
      *
      * @param customerRecord the customer whose hired vehicles are to be retrieved.
-     * @return a Collection of model.Vehicle objects. Returns an empty list if the customer has no active hires.
+     * @return a Collection of Vehicle objects. Returns an empty list if the customer has no active hires.
      */
     public Collection<Vehicle> getVechilesByCustomer (CustomerRecord customerRecord){
 

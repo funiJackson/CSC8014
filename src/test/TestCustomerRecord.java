@@ -15,7 +15,7 @@ import java.util.Date;
 public class TestCustomerRecord {
 
     /**
-     * The main for the model.CustomerRecord tests.
+     * The main for the CustomerRecord tests.
      */
     public static void main(String[] args) {
         System.out.println("Running model.CustomerRecord Tests...");
@@ -65,7 +65,7 @@ public class TestCustomerRecord {
         CustomerRecord record = new CustomerRecord(name, dob, hasLicense);
 
 
-        Assertions.assertEquals(name, record.getName());// Verify model.Name
+        Assertions.assertEquals(name, record.getName());// Verify Name
 
         Assertions.assertEquals(dob, record.getBirthDate());// Verify Date
 
@@ -108,7 +108,7 @@ public class TestCustomerRecord {
 
         CustomerRecord r1 = new CustomerRecord(name1, dob, true);
         CustomerRecord r2 = new CustomerRecord(name2, dob, false); // License different shouldn't affect equality
-        CustomerRecord r3 = new CustomerRecord(name3, dob, true); // Different model.Name
+        CustomerRecord r3 = new CustomerRecord(name3, dob, true); // Different Name
         CustomerRecord r4 = new CustomerRecord(name1, createDate(1991, 12, 1), true); // Different Date
 
         // Same object reference
@@ -117,7 +117,7 @@ public class TestCustomerRecord {
         // Logical equality (Same model.Name + Same dob)
         Assertions.assertTrue(r1.equals(r2));
 
-        // Different model.Name
+        // Different Name
         Assertions.assertFalse(r1.equals(r3));
 
         // Different Date

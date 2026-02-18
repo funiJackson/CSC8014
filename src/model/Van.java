@@ -3,8 +3,8 @@ package model;
 import manager.VehicleID;
 
 /**
- * Class represents a model.Vehicle of model.Van.
- * This class extends model.AbstractVehicle to inherit common vehicle properties.
+ * Class represents a Vehicle of Van.
+ * This class extends AbstractVehicle to inherit common vehicle properties.
  * It has unique behaviors specific to vans:
  * Shorter Service Interval:Vans require service every 5000 miles.
  * Inspection Logic:Vans may require a special inspection after long hires.
@@ -18,21 +18,21 @@ public class Van extends AbstractVehicle {
 
 
     /**
-     * Constructs a new model.Van instance with the specified unique identifier.
+     * Constructs a new Van instance with the specified unique identifier.
      *
      * @param id assigned to this van.
      */
-    public Van(VehicleID id) {
+     Van(VehicleID id) {
         super(id);
         this.needInspection = false;
     }
 
     /**
      * Get method of the string representation of this vehicle's type.
-     * @return the string "model.Van".
+     * @return the string "Van".
      */
     public String getVehicleType() {
-        return "model.Van";
+        return "Van";
     }
 
     /**
@@ -45,7 +45,6 @@ public class Van extends AbstractVehicle {
 
     /**
      * Method checks if the vehicle requires a special inspection.
-     * <p>
      * This overrides the default implementation of model.AbstractVehicle which always returns false.
      * The manager.VehicleManager checks this before allowing the van to be hired.
      * @return true if an inspection is pending and vice versa.

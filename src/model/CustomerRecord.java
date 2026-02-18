@@ -17,13 +17,13 @@ public class CustomerRecord {
     private final boolean haveC_licence;
     private final int customerID;
 
-    private static int nextID = 1;//A static counter used to generate unique id for customer, starts at 1 and increments with every new model.CustomerRecord created.
+    private static int nextID = 1;//A static counter used to generate unique id for customer, starts at 1 and increments with every new CustomerRecord created.
 
     /**
-     * Constructs a new model.CustomerRecord.
+     * Constructs a new CustomerRecord.
      * Initializes the customer's personal details and automatically assigns a unique Customer ID.
      *
-     * @param name          the model.Name object representing the customer's full name.
+     * @param name          the Name object representing the customer's full name.
      * @param birthDate     the customer's date of birth.
      * @param haveC_licence true if the customer has a commercial license and false otherwise.
      */
@@ -69,7 +69,7 @@ public class CustomerRecord {
 
     /**
      * Override methods to compares this customer record to another object for equality.
-     * Two model.CustomerRecord objects are considered equal if they have the same model.Name and the same Date of Birth.
+     * Two CustomerRecord objects are considered equal if they have the same model.Name and the same Date of Birth.
      * @param obj the reference object with which to compare.
      * @return true if this object is the same as the obj argument and false otherwise.
      */
@@ -80,7 +80,7 @@ public class CustomerRecord {
         if (obj == null){return false;}//If the other object is null, they cannot be equal.
 
         if (!(obj instanceof CustomerRecord)) {return false;}//Check if they belong to same class.
-        CustomerRecord that = (CustomerRecord) obj;//Downcasting obj to model.CustomerRecord so it can compare later.
+        CustomerRecord that = (CustomerRecord) obj;//Downcasting obj to CustomerRecord so it can compare later.
 
         return Objects.equals(name, that.name) && Objects.equals(birthDate, that.birthDate);// Compare the name and birthDate fields see if it is matched.
     }
@@ -88,7 +88,7 @@ public class CustomerRecord {
 
     /**
      * Generates a hash code for this customer record.
-     * This method must correspond to equals Object. Since equality depends on model.Name and BirthDate, the hash code must be generated from these same fields.
+     * This method must correspond to equals Object. Since equality depends on Name and BirthDate, the hash code must be generated from these same fields.
      * @return a hash code value for this object.
      */
     @Override
