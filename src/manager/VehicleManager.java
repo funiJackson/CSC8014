@@ -60,7 +60,7 @@ public class VehicleManager {
             if (v.getVehicleType().equals(vehicleType) && !v.isHired()) {
                 // Check two conditions:
                 // 1. The vehicle type matches what we are looking for (Car or Van).
-                // 2. The vehicle is NOT currently hired (!v.isHired()).
+                // 2. The vehicle is NOT currently hired.
                 count++;
             }
         }
@@ -102,7 +102,7 @@ public class VehicleManager {
      *        5. the van must not currently require an inspection.
 
      * @param customerRecord the customer attempting to hire the vehicle.
-     * @param vehicleType    the type of vehicle requested ("Car" or "Van").
+     * @param vehicleType    the type of vehicle requested (Car or Van).
      * @param duration       the duration of the hire in days (used to determine Van inspection requirements).
      * @return {@code true} if the vehicle was successfully hired; false if no vehicle is available or the hire limit is reached.
      * @throws IllegalArgumentException if the customer does not meet the age or license requirements.
