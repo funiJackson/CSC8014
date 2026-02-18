@@ -53,7 +53,7 @@ public class CustomerRecord {
 
     /**
      * Get the customer's name object.
-     * @return the model.Name object.
+     * @return the Name object.
      */
     public Name getName(){
         return name;
@@ -69,7 +69,7 @@ public class CustomerRecord {
 
     /**
      * Override methods to compares this customer record to another object for equality.
-     * Two CustomerRecord objects are considered equal if they have the same model.Name and the same Date of Birth.
+     * Two CustomerRecord objects are considered equal if they have the same Name and the same Date of Birth.
      * @param obj the reference object with which to compare.
      * @return true if this object is the same as the obj argument and false otherwise.
      */

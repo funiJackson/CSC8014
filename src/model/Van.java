@@ -45,8 +45,8 @@ public class Van extends AbstractVehicle {
 
     /**
      * Method checks if the vehicle requires a special inspection.
-     * This overrides the default implementation of model.AbstractVehicle which always returns false.
-     * The manager.VehicleManager checks this before allowing the van to be hired.
+     * This overrides the default implementation of AbstractVehicle which always returns false.
+     * The VehicleManager checks this before allowing the van to be hired.
      * @return true if an inspection is pending and vice versa.
      */
     public boolean requiresInspection(){

@@ -7,9 +7,9 @@ import java.util.Date;
 
 /**
  * A test class for the model.CustomerRecord class.
- * This class utilizes the test.Assertions framework to verify the functionality of the model.CustomerRecord class.
+ * This class utilizes the test.Assertions framework to verify the functionality of the CustomerRecord class.
  * Test:
- * Behavior of model.CustomerRecord objects: immutability, ID generation, equality logic, and correct data retrieval.
+ * Behavior of CustomerRecord objects: immutability, ID generation, equality logic, and correct data retrieval.
  * @author Fandi Zhou
  */
 public class TestCustomerRecord {
@@ -18,7 +18,7 @@ public class TestCustomerRecord {
      * The main for the CustomerRecord tests.
      */
     public static void main(String[] args) {
-        System.out.println("Running model.CustomerRecord Tests...");
+        System.out.println("Running CustomerRecord Tests...");
 
         tCreationAndGetters();//Tests object creation and get method
         System.out.println("Tests object creation and get method: pass!");
@@ -114,7 +114,7 @@ public class TestCustomerRecord {
         // Same object reference
         Assertions.assertTrue(r1.equals(r1));
 
-        // Logical equality (Same model.Name + Same dob)
+        // Logical equality (Same Name + Same dob)
         Assertions.assertTrue(r1.equals(r2));
 
         // Different Name

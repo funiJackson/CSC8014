@@ -4,7 +4,7 @@ import manager.VehicleID;
 
 /**
  * Class represents a specific class of Car.
- * This class extends model.AbstractVehicle and provides implementations
+ * This class extends AbstractVehicle and provides implementations
  * @author Fandi Zhou
  */
 public class Car extends AbstractVehicle {

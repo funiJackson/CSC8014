@@ -22,7 +22,7 @@ public abstract class AbstractVehicle implements Vehicle {
 
 
     /**
-     * Constructs a new model.AbstractVehicle with the given ID.
+     * Constructs a new AbstractVehicle with the given ID.
      * Initializes the vehicle as available (not hired) and with zero mileage.
      * This constructor is package-private as it should only be called by subclasses or the factory method.
      *
