@@ -1,13 +1,17 @@
+package model;
+
+import manager.VehicleID;
+
 /**
- * Class represents a specific type of vehicle: a Car.
- * This class extends AbstractVehicle and provides implementations
+ * Class represents a specific type of vehicle: a model.Car.
+ * This class extends model.AbstractVehicle and provides implementations
  * @author Fandi Zhou
  */
 public class Car extends AbstractVehicle {
 
     /**
-     * Constructs a new Car instance with the specified unique identifier.
-     * This constructor delegates the initialization of the ID, hiring status and mileage to the superclass AbstractVehicle.
+     * Constructs a new model.Car instance with the specified unique identifier.
+     * This constructor delegates the initialization of the ID, hiring status and mileage to the superclass model.AbstractVehicle.
      * @param id assigned to this car.
      */
     public Car(VehicleID id) {
@@ -16,10 +20,10 @@ public class Car extends AbstractVehicle {
 
     /**
      * Returns the string representation of this vehicle's type.
-     * @return the string "Car".
+     * @return the string "model.Car".
      */
     public String getVehicleType() {
-        return "Car";
+        return "model.Car";
     }
 
     /**

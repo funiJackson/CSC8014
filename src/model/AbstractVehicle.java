@@ -1,8 +1,12 @@
+package model;
+
+import manager.VehicleID;
+
 /**
- * AbstractVehicle serves as the base class for all specific vehicle types (e.g., Car, Van).
- * It implements the common functionality defined in the Vehicle interface.
+ * model.AbstractVehicle serves as the base class for all specific vehicle types (e.g., model.Car, model.Van).
+ * It implements the common functionality defined in the model.Vehicle interface.
  * This class manages the state shared by all vehicles, including:
- * Identity: The unique VehicleID.
+ * Identity: The unique manager.VehicleID.
  * Hiring Status: Whether the vehicle is currently on hire.
  * Mileage:Tracking the distance traveled to determine service intervals.
  * Specific behaviors, such as the service distance requirement.
@@ -18,7 +22,7 @@ public abstract class AbstractVehicle implements Vehicle {
 
 
     /**
-     * Constructs a new AbstractVehicle with the given ID.
+     * Constructs a new model.AbstractVehicle with the given ID.
      * Initializes the vehicle as available (not hired) and with zero mileage.
      * This constructor is package-private as it should only be called by subclasses or the factory method.
      *
@@ -31,20 +35,20 @@ public abstract class AbstractVehicle implements Vehicle {
     }
 
     /**
-     * Static Factory method to create instances of specific Vehicle types.
+     * Static Factory method to create instances of specific model.Vehicle types.
      * This method encapsulates the creation logic. It generates a new unique ID
-     * It instantiates the appropriate subclass (Car or Van) based on the input string.
+     * It instantiates the appropriate subclass (model.Car or model.Van) based on the input string.
 
-     * @param type the type of vehicle to create (e.g., "Car" or "Van").
-     * @return a new instance of a  Car or Van subclass.
+     * @param type the type of vehicle to create (e.g., "model.Car" or "model.Van").
+     * @return a new instance of a  model.Car or model.Van subclass.
      * @throws IllegalArgumentException if the provided vehicle type is not recognized.
      */
     public static Vehicle getInstance(String type) {
-        VehicleID newID = VehicleID.getInstance(type);// Get a new VehicleID specific to the requested type.
+        VehicleID newID = VehicleID.getInstance(type);// Get a new manager.VehicleID specific to the requested type.
 
-        if (type.equals("Car")) {
+        if (type.equals("model.Car")) {
             return new Car(newID);
-        } else if (type.equals("Van")) {
+        } else if (type.equals("model.Van")) {
             return new Van(newID);
         } else {//Handle invalid input types.
             throw new IllegalArgumentException("Unknown vehicle type: " + type);

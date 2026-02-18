@@ -1,20 +1,24 @@
+package test;
+import model.*;
+import manager.*;
+
 import java.util.Calendar;
 import java.util.Date;
 
 /**
- * A test class for the CustomerRecord class.
- * This class utilizes the Assertions framework to verify the functionality of the CustomerRecord class.
+ * A test class for the model.CustomerRecord class.
+ * This class utilizes the test.Assertions framework to verify the functionality of the model.CustomerRecord class.
  * Test:
- * Behavior of CustomerRecord objects: immutability, ID generation, equality logic, and correct data retrieval.
+ * Behavior of model.CustomerRecord objects: immutability, ID generation, equality logic, and correct data retrieval.
  * @author Fandi Zhou
  */
 public class TestCustomerRecord {
 
     /**
-     * The main for the CustomerRecord tests.
+     * The main for the model.CustomerRecord tests.
      */
     public static void main(String[] args) {
-        System.out.println("Running CustomerRecord Tests...");
+        System.out.println("Running model.CustomerRecord Tests...");
 
         tCreationAndGetters();//Tests object creation and get method
         System.out.println("Tests object creation and get method: pass!");
@@ -61,7 +65,7 @@ public class TestCustomerRecord {
         CustomerRecord record = new CustomerRecord(name, dob, hasLicense);
 
 
-        Assertions.assertEquals(name, record.getName());// Verify Name
+        Assertions.assertEquals(name, record.getName());// Verify model.Name
 
         Assertions.assertEquals(dob, record.getBirthDate());// Verify Date
 
@@ -104,16 +108,16 @@ public class TestCustomerRecord {
 
         CustomerRecord r1 = new CustomerRecord(name1, dob, true);
         CustomerRecord r2 = new CustomerRecord(name2, dob, false); // License different shouldn't affect equality
-        CustomerRecord r3 = new CustomerRecord(name3, dob, true); // Different Name
+        CustomerRecord r3 = new CustomerRecord(name3, dob, true); // Different model.Name
         CustomerRecord r4 = new CustomerRecord(name1, createDate(1991, 12, 1), true); // Different Date
 
         // Same object reference
         Assertions.assertTrue(r1.equals(r1));
 
-        // Logical equality (Same Name + Same dob)
+        // Logical equality (Same model.Name + Same dob)
         Assertions.assertTrue(r1.equals(r2));
 
-        // Different Name
+        // Different model.Name
         Assertions.assertFalse(r1.equals(r3));
 
         // Different Date

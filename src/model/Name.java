@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Objects;
 
 /**
@@ -10,7 +12,7 @@ public final class Name {
     private final String firstName, lastName;
 
     /**
-     * Constructs a new Name object.
+     * Constructs a new model.Name object.
      * @param firstName the person's first name.
      * @param lastName  the person's last name.
      */
@@ -20,7 +22,7 @@ public final class Name {
     }
 
     /**
-     * Override equals methods to compares this Name to another object for equality.
+     * Override equals methods to compares this model.Name to another object for equality.
      * @param obj the reference object with which to compare.
      * @return true if this object is the same as the obj argument and vice versa.
      */
@@ -36,7 +38,7 @@ public final class Name {
     }
 
     /**
-     * This method is essential for using Name objects in has-based collections
+     * This method is essential for using model.Name objects in has-based collections
      * It ensures that equal objects (same first/last name) produce the same hash code.
      * @return a hash code value for this object.
      */

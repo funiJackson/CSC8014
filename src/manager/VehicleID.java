@@ -1,9 +1,12 @@
+package manager;
+import model.*;
+
 import java.util.*;
 
 /**
  * Class represents a unique id for a vehicle in the system.
  * This class uses a Factory pattern to generate unique IDs(with first and second component) with specific formats based on the vehicle type, the first component rules:
- * The first character is a letter that indicates the vehicle type (i.e., 'C' for Car, 'V' forVan).
+ * The first character is a letter that indicates the vehicle type (i.e., 'C' for model.Car, 'V' forVan).
  * The second character is a randomly generated letter.
  * The third character is a randomly generated single-digit number (0-9).
  * The second component rules:
@@ -23,7 +26,7 @@ public class VehicleID {
      *
      * @param firstComponent  the prefix component.
      * @param secondComponent the numeric suffix component.
-     * @param strRep          the full string representation of Car or Van.
+     * @param strRep          the full string representation of model.Car or model.Van.
      */
     private VehicleID(String firstComponent, int secondComponent, String strRep) {
         this.firstComponent= firstComponent;
@@ -34,8 +37,8 @@ public class VehicleID {
 
 
     /**
-     * Method generates a random ID adhering to the format rules for the Car or Van type.
-     * @param type the type of vehicle ("Car" or "Van").
+     * Method generates a random ID adhering to the format rules for the model.Car or model.Van type.
+     * @param type the type of vehicle ("model.Car" or "model.Van").
      * @return a unique id.
      * @throws IllegalArgumentException if the provided type is invalid.
      */
@@ -45,7 +48,7 @@ public class VehicleID {
         // While loop to ensure we keep looping until we get a unique ID.
         while (true) {
 
-            if(type.equals("Car")) {
+            if(type.equals("model.Car")) {
                 String firstChar = "C";
                 char secondChar = (char) ('A' + r.nextInt(26));//Randomly generate letter from A-Z.
                 int thirdChar = r.nextInt(10);//Randomly generate letter from 1-9.
@@ -62,8 +65,8 @@ public class VehicleID {
 
                     return newID;
                 }
-                //Van id generate case.
-            }else if(type.equals("Van")) {
+                //model.Van id generate case.
+            }else if(type.equals("model.Van")) {
                 String firstChar = "V";
                 char secondChar = (char) ('A' + r.nextInt(26));
                 int thirdChar = r.nextInt(10);

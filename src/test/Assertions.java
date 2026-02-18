@@ -1,5 +1,9 @@
+package test;
+import model.*;
+import manager.*;
+
 /**
- * Assertions - a set of static utility methods to assert the value
+ * test.Assertions - a set of static utility methods to assert the value
  * of objects and conditions etc. for testing purposes. All methods throw an
  * AssertionError if the given values or conditions are not as asserted.
  *
