@@ -3,7 +3,6 @@ import model.*;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
 import java.util.*;
 
 /**
@@ -110,11 +109,9 @@ public class VehicleManager {
     public boolean hireVehicle(CustomerRecord customerRecord, String vehicleType, int duration) {
 
         //count the age of the current customer
-        Date birthDate = customerRecord.getBirthDate();
-        LocalDate birth = birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        LocalDate now = LocalDate.now();
+        LocalDate birth = new java.sql.Date(customerRecord.getBirthDate().getTime()).toLocalDate();
         // Calculate the exact age in years.
-        int age = Period.between(birth, now).getYears();
+        int age = Period.between(birth, LocalDate.now()).getYears();
 
 
         // Driver must be at least 18 to rent a Car.
@@ -198,8 +195,7 @@ public class VehicleManager {
         Vehicle TargetV =  null;
         for (Vehicle v: hired_Vehicle) {
             // Compare IDs to make sure we find the correct vehicle.
-            // Using String.valueOf handles potential nulls safely.
-            if (String.valueOf(v.getVehicleID()).equals(String.valueOf(vehicleID))) {
+            if (v.getVehicleID().equals(vehicleID)) {
                 TargetV = v;
                 break;
             }

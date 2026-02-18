@@ -115,4 +115,29 @@ public class VehicleID {
         return strRep;
     }
 
+    /**
+     * Override equals methods to compares this VehicleID to another object for equality.
+     * @param obj the reference object with which to compare.
+     * @return true if this object is the same as the obj argument and vice versa.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj){return true;}//Check if there are same object.
+        if (obj == null){return false;}//Check if the param we pass is null.
+        if (!(obj instanceof VehicleID)){return false;}//Check if they belong to same class.
+        VehicleID V = (VehicleID) obj;//Downcasting obj to name so it can compare.
+
+        //Check if they are match.
+        return Objects.equals(strRep, V.strRep);
+    }
+
+    /**
+     * This method is essential for using VehicleID objects in has-based collections
+     * It ensures that equal objects produce the same hash code.
+     * @return a hash code value for this object.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(strRep);
+    }
 }

@@ -22,7 +22,7 @@ public final class Name {
     }
 
     /**
-     * Override equals methods to compares this model.Name to another object for equality.
+     * Override equals methods to compares this Name to another object for equality.
      * @param obj the reference object with which to compare.
      * @return true if this object is the same as the obj argument and vice versa.
      */
